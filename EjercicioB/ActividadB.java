@@ -17,7 +17,7 @@ class Puerta2 {
 class LlaveA extends Thread {
 	public void run() {// recoge las acciones del Thread
 		while (!Puerta2.CerrojoB)
-			// mientras que la puerta no tenga cerrojoB
+			// mientras que la puerta no tenga cerrojoB. 
 			Puerta2.CerrojoA = true;// la puerta tiene CerrojoA (true)
 
 		;
