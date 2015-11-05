@@ -8,7 +8,7 @@ package solAlternativa;
 class Puerta {// clase que gestiona las Puertas
 	public static boolean CerrojoA;
 	public static boolean CerrojoB;
-	public static int contador;
+	public static int contador = 0;
 }
 
 // Ésta clase LlaveB se corresponde con el segundo hilo (extiende de Thread)
@@ -51,7 +51,7 @@ public class ActividadB {
 	 * @throws InterruptedException
 	 */
 	public static void main(String[] args) throws InterruptedException {
-		Puerta.CerrojoA = true;// 
+		Puerta.CerrojoA = true;// se abre una de las puertas
 		Puerta.CerrojoB = false;
 		Thread a = new LlaveA();// se crean los hilos
 		Thread b = new LlaveB();
@@ -60,6 +60,7 @@ public class ActividadB {
 		a.join();// permite mantener a la espera un hilo hasta que termine el
 		// siguiente
 		b.join();
+		//System.out.println(Puerta.contador);
 
 	}
 }
